@@ -16,17 +16,17 @@ angular.module('socially').directive('partiesList', function () {
             this.helpers({
                 parties: function () {
                     return Parties.find({}, {
-                        sort: this.getReactively('sort')
+                        sort: this.getReactively('sort');
                     });
                 },
-                partiesCount:function(){
+                partiesCount: function () {
                     return Counts.get('numberOfParties');
                 }
             });
 
-            this.updateSort = function(){
+            this.updateSort = function () {
                 this.sort = {
-                    name:parseInt(this.orderProperty);
+                    name: parseInt(this.orderProperty);
                 }
             };
 
@@ -52,7 +52,7 @@ angular.module('socially').directive('partiesList', function () {
                 });
             };
 
-            this.pageChanged = function(){
+            this.pageChanged = function () {
                 this.page = newPage;
             };
         }
