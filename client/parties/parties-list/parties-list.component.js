@@ -18,8 +18,17 @@ angular.module('socially').directive('partiesList', function () {
                     return Parties.find({}, {
                         sort: this.getReactively('sort')
                     });
+                },
+                partiesCount:function(){
+                    return Counts.get('numberOfParties');
                 }
             });
+
+            this.updateSort = function(){
+                this.sort = {
+                    name:parseInt(this.orderProperty);
+                }
+            };
 
             this.subscribe('parties', function () {
                 return [
@@ -41,7 +50,11 @@ angular.module('socially').directive('partiesList', function () {
                 Parties.remove({
                     _id: party._id
                 });
-            }
+            };
+
+            this.pageChanged = function(){
+                this.page = newPage;
+            };
         }
     }
 });

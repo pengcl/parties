@@ -20,3 +20,5 @@ accounts-password
 dotansimha:accounts-ui-angular
 accounts-facebook
 accounts-weibo
+angularutils:pagination
+tmeasday:publish-counts
